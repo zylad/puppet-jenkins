@@ -11,9 +11,9 @@ class jenkins::params {
   $swarm_version              = '1.19'
   $default_plugins_host       = 'http://updates.jenkins-ci.org'
   $port                       = '8080'
-  $libdir                     = ''
+  $lib_dir                    = ''
 
-  if $libdir == '' {
+  if $lib_dir == '' {
     if $::osfamily == 'Debian' {
       $libdir = '/usr/share/jenkins'
     } else {
