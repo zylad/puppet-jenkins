@@ -14,15 +14,10 @@ class jenkins::params {
   $libdir                     = ''
 
   if $libdir == '' {
-    case $::osfamily {
-      'Debian': {
-        $libdir = '/usr/share/jenkins'
-      }
-      default: {
-        $libdir = '/usr/lib/jenkins'
-      }
+    if $::osfamily == 'Debian' {
+      $libdir = '/usr/share/jenkins'
+    } else {
+      $libdir = '/usr/share/jenkins'
     }
   }
 }
-
-
